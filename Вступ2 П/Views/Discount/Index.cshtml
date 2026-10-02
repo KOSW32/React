@@ -1,0 +1,33 @@
+@model DiscountApp.Models.DiscountViewModel
+
+@{
+    ViewData["Title"] = "Розрахунок знижки";
+}
+
+<div class="discount-page">
+    <h1>Розрахунок підсумкової ціни товару</h1>
+
+    <form asp-action="Index" method="post" class="discount-form">
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" step="0.01" />
+            <span asp-validation-for="Price" class="field-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DiscountPercent"></label>
+            <input asp-for="DiscountPercent" class="form-control" step="0.1" />
+            <span asp-validation-for="DiscountPercent" class="field-error"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">Розрахувати</button>
+    </form>
+
+    @if (Model.FinalPrice > 0)
+    {
+        <div class="discount-result">
+            <p>Підсумкова ціна: <strong>@Model.FinalPrice.ToString("F2") грн</strong></p>
+            <p>@Model.Message</p>
+        </div>
+    }
+</div>

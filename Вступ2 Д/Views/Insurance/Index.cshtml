@@ -1,0 +1,50 @@
+@model InsuranceViewModel
+
+@{
+    ViewData["Title"] = "Калькулятор автоцивілки";
+}
+
+<div class="insurance-page">
+    <h1>Веб-калькулятор автоцивілки</h1>
+
+    <form asp-action="Index" method="post" class="insurance-form">
+        <div class="form-group">
+            <label asp-for="EngineCapacity"></label>
+            <input asp-for="EngineCapacity" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CityType"></label>
+            <select asp-for="CityType" class="form-control">
+                <option value="Kyiv">Київ</option>
+                <option value="LargeCity">Велике місто</option>
+                <option value="SmallTown">Інше</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DriverExperienceYears"></label>
+            <input asp-for="DriverExperienceYears" class="form-control" />
+        </div>
+
+        <div class="form-group form-check">
+            <input asp-for="HasDiscountCategory" class="form-check-input" />
+            <label asp-for="HasDiscountCategory" class="form-check-label"></label>
+        </div>
+
+        <button type="submit" class="btn-submit">Розрахувати</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="insurance-error">
+            <p>@Model.ErrorMessage</p>
+        </div>
+    }
+    else if (Model.CalculatedPrice > 0)
+    {
+        <div class="insurance-result">
+            <p>Вартість страховки: <strong>@Model.CalculatedPrice.ToString("F2") грн</strong></p>
+        </div>
+    }
+</div>
