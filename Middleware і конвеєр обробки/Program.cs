@@ -1,4 +1,5 @@
 using RequestLogger.API.Logging;
+using RequestLogger.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 app.UseRequestLogging();
+app.UseMiddleware<LanguageValidationMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
