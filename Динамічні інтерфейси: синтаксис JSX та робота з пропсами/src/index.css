@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.page {
+  width: min(100% - 40px, 900px);
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.page-header { margin-bottom: 42px; }
+
+.page-header__eyebrow {
+  margin: 0 0 10px;
+  color: #635bff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-header h1,
+.schedule-section__title,
+.lesson-card__topic {
+  font-family: 'Manrope', sans-serif;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: -0.05em;
+}
+
+.page-header__description {
+  margin: 12px 0 0;
+  color: #667085;
+  font-size: 1.05rem;
+}
+
+.schedule-section {
+  padding: 30px;
+  border: 1px solid #e8ebf2;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgb(22 34 66 / 6%);
+}
+
+.schedule-section__title {
+  margin: 0 0 22px;
+  font-size: 1.5rem;
+}
+
+.schedule-section__lessons {
+  display: grid;
+  gap: 14px;
+}
+
+.lesson-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+}
+
+.lesson-card--online {
+  border-color: #d9e8ff;
+  background: #edf5ff;
+}
+
+.lesson-card--offline {
+  border-color: #e8dcff;
+  background: #f5efff;
+}
+
+.lesson-card__details { display: grid; gap: 6px; }
+
+.lesson-card__topic {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.lesson-card__date,
+.lesson-card__format {
+  color: #596579;
+  font-size: 0.9rem;
+}
+
+.lesson-card__format { font-weight: 600; }
+
+.lesson-card__button {
+  flex: 0 0 auto;
+  padding: 11px 15px;
+  border-radius: 10px;
+  background: #315ee7;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.lesson-card__notice {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #59418b;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .page {
+    width: min(100% - 28px, 900px);
+    padding: 44px 0;
+  }
+
+  .schedule-section { padding: 20px; }
+
+  .lesson-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
