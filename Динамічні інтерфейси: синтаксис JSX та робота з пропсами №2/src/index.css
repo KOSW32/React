@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(ellipse at 12% 0%, #e8f4ec 0, transparent 36%), #f5f7fb;
+}
+
+button { font: inherit; }
+
+.page {
+  width: min(100% - 40px, 840px);
+  margin: 0 auto;
+  padding: 72px 0 42px;
+}
+
+.page-header { margin-bottom: 42px; }
+
+.page-header__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+  border: 1px solid #dce9df;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 75%);
+  color: #53665a;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.page-header__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #47a66b;
+  box-shadow: 0 0 0 3px #e0f3e6;
+}
+
+.page-header h1,
+.homework-section__title,
+.homework-card__title { font-family: 'Manrope', sans-serif; }
+
+.page-header h1 {
+  max-width: 650px;
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+}
+
+.page-header > p {
+  margin: 16px 0 0;
+  color: #697386;
+  font-size: 1.05rem;
+}
+
+.homework-section {
+  padding: 30px;
+  border: 1px solid #e8ebf2;
+  border-radius: 24px;
+  background: rgb(255 255 255 / 92%);
+  box-shadow: 0 18px 50px rgb(22 34 66 / 6%);
+}
+
+.homework-section__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.homework-section__eyebrow {
+  margin: 0 0 4px;
+  color: #778194;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.homework-section__title {
+  margin: 0;
+  font-size: 1.55rem;
+  letter-spacing: -0.035em;
+}
+
+.homework-section__count {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f0f2f6;
+  color: #5e6878;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.homework-section__list { display: grid; gap: 14px; }
+
+.homework-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.homework-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgb(22 34 66 / 7%);
+}
+
+.homework-card--completed {
+  border-color: #d7ecdc;
+  background: #eff8f1;
+}
+
+.homework-card--pending {
+  border-color: #f4dfc8;
+  background: #fff5e9;
+}
+
+.homework-card__course {
+  margin: 0 0 5px;
+  color: #768092;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.homework-card__title {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.homework-card__status {
+  display: inline-block;
+  margin-top: 9px;
+  color: #637064;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.homework-card__result {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #287044;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.homework-card__button {
+  flex: 0 0 auto;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #dd8a38;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.homework-card__button:hover { background: #c97727; }
+.homework-card__button:focus-visible { outline: 3px solid #f3c28f; outline-offset: 3px; }
+
+.page-footer {
+  padding: 24px 0 0;
+  color: #8992a1;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .page { width: min(100% - 28px, 840px); padding-top: 44px; }
+  .homework-section { padding: 20px; }
+  .homework-card { align-items: flex-start; flex-direction: column; }
+  .homework-section__heading { align-items: flex-start; }
+}
